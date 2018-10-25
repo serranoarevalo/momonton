@@ -12,6 +12,15 @@ html {
   background: #333333;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

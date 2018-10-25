@@ -23,6 +23,7 @@ function loadBackground() {
       }, ${parsedImage.country}`;
     }
   }
+  return;
 }
 
 function saveBackground(imageUrl, city, country, name) {
@@ -66,6 +67,7 @@ function getBackground() {
 
 function initApp() {
   loadBackground();
+  return;
 }
 
 initApp();

@@ -1,0 +1,27 @@
+.center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.center .name__input {
+  appearance: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 36px;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.8);
+}
+.center .name__input::placeholder {
+  color: white;
+  opacity: 0.7;
+}
+
+.center .name__input:focus,
+.center .name__input:active {
+  outline: none;
+}
+
+.center .name__text {
+  font-size: 36px;
+}
