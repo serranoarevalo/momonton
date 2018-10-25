@@ -1,6 +1,6 @@
 const UNSPLASH_API_KEY =
   "b491e86a6957b396f44f1e15e41d3d242e17aa982607f161b95defd195c7f4dd";
-const UNSPLASH_URL = `https://api.unsplash.com/photos/random/?client_id=${UNSPLASH_API_KEY}&query=landscape`;
+const UNSPLASH_URL = `https://api.unsplash.com/photos/random/?client_id=${UNSPLASH_API_KEY}&query=landscape&orientation=landscape`;
 
 const body = document.querySelector("body");
 
@@ -14,12 +14,14 @@ function loadBackground() {
     if (today > parsedImage.expiresOn) {
       getBackground();
     } else {
-      body.style.backgroundImage = `ur(${parsedImage.expiresOn})`;
+      body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url(${
+        parsedImage.url
+      })`;
     }
   }
 }
 
-function saveBackground(imageUrl) {
+function saveBackground(imageUrl, city, country, name) {
   const savedImage = localStorage.getItem("bg");
   if (savedImage !== null) {
     localStorage.removeItem("bg");
@@ -28,7 +30,10 @@ function saveBackground(imageUrl) {
   expirationDate.setDate(expirationDate.getDate() + 1);
   const imageObject = {
     url: imageUrl,
-    expiresOn: expirationDate
+    expiresOn: expirationDate,
+    city,
+    country,
+    name
   };
   localStorage.setItem("bg", JSON.stringify(imageObject));
   loadBackground();
@@ -40,9 +45,14 @@ function getBackground() {
     .then(response => response.json())
     .then(json => {
       const image = json;
-      if (image.urls && image.urls.full) {
+      console.log(image);
+      if (image.urls && image.urls.full && image.location) {
         const fullUrl = image.urls.full;
-        saveBackground(fullUrl);
+        const location = image.location;
+        const city = location.city;
+        const country = location.country;
+        const name = location.name;
+        saveBackground(fullUrl, city, country, name);
       } else {
         getBackground();
       }
