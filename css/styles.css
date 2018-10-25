@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
 body,
 html {
   overflow: hidden;
@@ -5,6 +7,7 @@ html {
   width: 100%;
   margin: 0;
   padding: 0;
+  font-family: "Open Sans", sans-serif;
 }
 
 html {
@@ -26,4 +29,19 @@ body {
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
   animation-delay: 0.5s;
+  color: white;
+}
+
+.location {
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in;
+  font-style: italic;
+  font-size: 12px;
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+}
+
+.location:hover {
+  opacity: 1;
 }
