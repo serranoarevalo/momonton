@@ -23,7 +23,7 @@ function paintInput() {
   input.type = "text";
   input.className = "name__input";
   const form = document.createElement("form");
-  form.onsubmit = handleSubmit;
+  form.addEventListener("submit", handleSubmit);
   form.appendChild(input);
   nameContainer.appendChild(form);
 }

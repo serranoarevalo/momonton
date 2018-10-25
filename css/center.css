@@ -11,6 +11,7 @@
   color: white;
   font-size: 36px;
   border-bottom: 3px solid rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
 }
 .center .name__input::placeholder {
   color: white;
@@ -24,4 +25,9 @@
 
 .center .name__text {
   font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.center .name {
+  margin-bottom: 30px;
 }

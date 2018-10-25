@@ -41,3 +41,25 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+input {
+  background: none;
+  appearance: none;
+  border: 0;
+  font-size: 22px;
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+input::placeholder {
+  color: white;
+}
+
+input:focus,
+input:active {
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+}
