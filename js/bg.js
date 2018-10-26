@@ -50,7 +50,6 @@ function getBackground() {
     .then(response => response.json())
     .then(json => {
       const image = json;
-      console.log(image);
       if (image.urls && image.urls.full && image.location) {
         const fullUrl = image.urls.full;
         const location = image.location;
