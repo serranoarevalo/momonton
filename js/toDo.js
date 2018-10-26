@@ -2,6 +2,18 @@ const form = document.querySelector(".js-to-do"),
   input = document.querySelector(".js-add-to-do"),
   list = document.querySelector(".js-list");
 
+let toDos = [];
+
+function saveToDo(text) {
+  const toDoObject = {
+    id: toDos.length + 1,
+    value: text
+  };
+  toDos.push(toDoObject);
+  const stringToDo = JSON.stringify(toDos);
+  localStorage.setItem("toDos", stringToDo);
+}
+
 function addToDo(text) {
   const toDo = document.createElement("li");
   toDo.className = "toDo";
@@ -20,13 +32,19 @@ function onSubmit(event) {
   const value = input.value;
   input.value = "";
   addToDo(value);
+  saveToDo(value);
 }
 
 function loadToDos() {
-  const toDos = localStorage.getItem("toDos");
-  if (toDos === null) {
-    const parsedToDos = JSON.parse(toDos);
+  const loadedToDos = localStorage.getItem("toDos");
+  if (loadedToDos !== null) {
+    const parsedToDos = JSON.parse(loadedToDos);
+    toDos = parsedToDos;
+    toDos.forEach(function(toDo) {
+      addToDo(toDo.value);
+    });
   }
+  return;
 }
 
 function init() {
