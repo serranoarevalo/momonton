@@ -25,7 +25,6 @@ function handleDelete(event) {
   const toDoId = li.id;
   ul.removeChild(li);
   toDos = toDos.filter(function(toDo) {
-    console.log(toDo.id, toDoId);
     return toDo.id !== parseInt(toDoId);
   });
   persistToDos();

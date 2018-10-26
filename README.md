@@ -5,8 +5,12 @@ A clone of the productivity chrome app [Momentum](https://chrome.google.com/webs
 ## Features
 
 - [x] Clock
-- [ ] To Do List
-- [ ] Weather
+- [x] To Do List
+- [x] Weather
 - [ ] Daily Quote
 - [x] Daily Photo
-- [ ] Offline Support
+- [x] Offline Support
+
+## Try it out
+
+[https://serranoarevalo.github.io/momonton/](https://serranoarevalo.github.io/momonton/)
