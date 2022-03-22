@@ -1,4 +1,4 @@
-const API_KEY = "241051bf13976dd3ddf8b8d9f247255e";
+const API_KEY = "4e1e6a94324a49ed9e009d470182ab23";
 const WEATHER_API = "https://api.openweathermap.org/data/2.5/weather?";
 
 const weather = document.querySelector(".js-weather .weather__text");
